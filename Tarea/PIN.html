@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Amigo imaginario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body style="background-color:#3E4E59;">
+    <div>
+    <center>
+    <br>
+      <h3>Ingrese Pin 1</h3>
+    <input type="text" id="pin1" ><br>
+      <h3>Ingrese Pin 2</h3>
+    <input type="text" id="pin2" ><br><br>
+
+    <input type="button" id="boton1" value="Descifrar"><br><br>
+    <input type="text" id='resul'>
+  </center>
+</div>
+<div>
+
+</div>
+    <script>
+        var valor1 = document.getElementById('pin1')
+        var valor2 = document.getElementById('pin2')
+        var botonsumar = document.getElementById('boton1')
+        var resul = document.getElementById('resul')
+
+        botonsumar.onclick =   function(){
+          if (valor1.value == "423" && valor2.value == "465")  {
+          resul.value ="Pin Maestro: 845962"
+        } else {
+          resul.value ="Pin Incorrecto"
+         }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

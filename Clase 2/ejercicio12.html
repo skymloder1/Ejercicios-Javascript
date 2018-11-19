@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+     <script type="text/javascript">
+
+         var edades=[32,52,63,71,81,13,52,42,23,11]
+         var suma = 0
+
+         for (var i = 0; i < edades.length; i++) {
+           var suma = (suma + edades[i])
+         }
+         var promedio = (suma / edades.length);
+         console.log (promedio)
+
+         var parrafo = document.createElement("P")
+         parrafo.innerHTML = "El promedio de edades es <b>"+ promedio + "</b>"
+         document.body.appendChild(parrafo)
+
+
+     </script>
+
+  </body>
+</html>
