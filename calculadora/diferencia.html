@@ -19,9 +19,9 @@
     </style>
 <div  align="center">
 
-     <h1>Calculador de incidentes :D</h1>
-     <p>Fecha de incio:</p><input id="date1" type="date" value="2018-01-01"><input id="time1" type="time" ><br><br>
-     <p>Fecha de solucion:</p> <input id="date2" type="date" value="2018-01-01"> <input  id="time2" type="time" ><br><br>
+     <h1>Calculador de incidentes</h1>
+     <p>Fecha de incio:</p><input id="date1" type="date" value="2018-01-01"><input id="time1" type="time" value="00:00" ><br><br>
+     <p>Fecha de solucion:</p> <input id="date2" type="date" value="2018-01-01"> <input  id="time2" type="time" value="00:00"><br><br>
     <input type="button" id='calcular' value="Calcular"><br><br>
     <textarea rows="3" cols="50" id='resultado'>
 
@@ -33,6 +33,7 @@
           Duración del incidente:   DD HH
         </textarea>.
         -->
+
 </div>
 
    <script type="text/javascript">
@@ -42,13 +43,16 @@
       var  time2 = document.getElementById('time2')
       var  calcular = document.getElementById('calcular')
       var diferencia = document.getElementById('resultado')
+      var seteo = moment().format('YYYY-MM-DD'); // setea fecha y formato YYYY-MM-DD
+      date1.value=seteo // setea valor de fecha actual en value del input id date1
+      date2.value=seteo // setea valor de fecha actual en value del input id date2
+
 
       calcular.onclick =   function(){
 
         var now  = (date1.value+" "+time1.value+":00");
         var then = (date2.value+" "+time2.value+":00");
         var diff = moment.duration(moment(then).diff(moment(now)));
-
         var days = parseInt(diff.asDays());
         var hours = parseInt(diff.asHours());
         hours = hours - days*24;
@@ -63,7 +67,7 @@
           }
       }
 
-
+        // console.log(seteo);
       // debug console.log(date1.value , date2.value , time1.value , time2.value)
    </script>
 
