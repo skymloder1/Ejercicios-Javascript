@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculador de Incidentes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <script src="http://momentjs.com/downloads/moment.js" charset="utf-8"></script>
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: 'Baloo', cursive;
+      }
+    </style>
+<div  align="center">
+
+<h1>Calculador de incidentes :D</h1>
+
+     <p>Fecha de incio:</p><input id="date1" type="date" value="2018-01-01"><input id="time1" type="time" ><br><br>
+     <p>Fecha de solucion:</p> <input id="date2" type="date" value="2018-01-01"> <input  id="time2" type="time" ><br><br>
+
+
+        <input type="button" id='calcular' value="Calcular"><br><br>
+
+        <textarea rows="3" cols="50" id='resultado'>
+
+        </textarea>.
+        <!--
+        <textarea rows="3" cols="50" id='resultado'>
+          Fecha de inicio incidente: DD/MM/AAAA HH:MM
+          Fecha de solución incidente:  DD/MM/AAAA HH:MM
+          Duración del incidente:   DD HH
+        </textarea>.
+        -->
+</div>
+
+   <script type="text/javascript">
+      var  date1 = document.getElementById('date1')
+      var  date2 = document.getElementById('date2')
+      var  time1 = document.getElementById('time1')
+      var  time2 = document.getElementById('time2')
+      var  calcular = document.getElementById('calcular')
+      var diferencia = document.getElementById('resultado')
+
+      calcular.onclick =   function(){
+
+        var now  = (date1.value+" "+time1.value+":00");
+        var then = (date2.value+" "+time2.value+":00");
+        var diff = moment.duration(moment(then).diff(moment(now)));
+        var days = parseInt(diff.asDays());
+        var hours = parseInt(diff.asHours());
+        hours = hours - days*24;
+        var minutes = parseInt(diff.asMinutes());
+        minutes = minutes - (days*24*60 + hours*60);
+        if(days<= 0 && hours > 0){
+            diferencia.value = ( 'Duracion del incidente: ' + hours + " Hs " + minutes +" Min")
+        }else if (hours <= 0 && days<= 0){
+              diferencia.value = ('Duracion del incidente: '+  minutes +" Min")
+          } else {
+          diferencia.value = ('Duración del incidente: '+ days +' Dia ' + hours + " Hs " + minutes +" Min")
+          }
+      }
+
+
+      // debug console.log(date1.value , date2.value , time1.value , time2.value)
+   </script>
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
