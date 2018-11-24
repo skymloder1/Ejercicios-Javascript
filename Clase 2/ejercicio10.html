@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-     <script type="text/javascript">
-var control=0
-var color=""
 
-while (control==0) {
-    var color = prompt ("Ingresa un color")
-    if (color=="azul" || color=="rojo" || color =="verde") {
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
 
-      if (color == "rojo"){
-            document.body.style.backgroundColor='red'
-            control++
+<body>
+  <script type="text/javascript">
+    var control = 0
+    var color = ""
+
+    while (control == 0) {
+      var color = prompt("Ingresa un color")
+      if (color == "azul" || color == "rojo" || color == "verde") {
+
+        if (color == "rojo") {
+          document.body.style.backgroundColor = 'red'
+          control++
         }
-      if (color == "azul"){
-            document.body.style.backgroundColor='blue'
-          }
-      if (color == "verde"){
-            document.body.style.backgroundColor='green'
-          }
+        if (color == "azul") {
+          document.body.style.backgroundColor = 'blue'
+        }
+        if (color == "verde") {
+          document.body.style.backgroundColor = 'green'
+        }
+      }
     }
-    }
-     </script>
+  </script>
 
-  </body>
+</body>
+
 </html>

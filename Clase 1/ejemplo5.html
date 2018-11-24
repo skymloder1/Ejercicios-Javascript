@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
 	<meta charset='UTF-8'>
 	<title>Document</title>
 </head>
+
 <body>
 	<input type='text' id='entrada'></input></br>
 
 	<input type='button' id='boton1' value='prueba'></input> <!-- creamos un botom-->
 	<script>
 		var valor = document.getElementById('entrada'); //  documento lo tenemos registrado por el id 'entrada'
-        valor.value ='Cambio el valor por javascript';  // mostramos en el input un valor
-        valor.style.backgroundColor = 'red'; // modificamos  el valor CSS style backgroundColor en red
-        valor.style.color = 'while';   // modificamos  el valor CSS style color  en while
-        
-        var miboton = document.getElementById('boton1');
+		valor.value = 'Cambio el valor por javascript'; // mostramos en el input un valor
+		valor.style.backgroundColor = 'red'; // modificamos  el valor CSS style backgroundColor en red
+		valor.style.color = 'while'; // modificamos  el valor CSS style color  en while
 
-        miboton.onclick =  function(){ // funcion
-        	alert('Hizo clic'); // mensaje tipo alerta
-        	valor.value='Nuevo valor'; // Asinar al valor
-        };
+		var miboton = document.getElementById('boton1');
 
-        // tarea
-        // ejercicio  un input + input + botom(sumar) = resultado en input
+		miboton.onclick = function() { // funcion
+			alert('Hizo clic'); // mensaje tipo alerta
+			valor.value = 'Nuevo valor'; // Asinar al valor
+		};
 
-
-
+		// tarea
+		// ejercicio  un input + input + botom(sumar) = resultado en input
 	</script>
 </body>
+
 </html>
